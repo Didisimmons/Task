@@ -7,7 +7,6 @@ class SensorForm(forms.ModelForm):
         model = Sensor
         fields = ['country', 'city_name']
         
-    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {

@@ -11,12 +11,6 @@
                     <div class="weather-container pt-3 text-black">
                         <form method="POST" action="{% url 'home' %}" class="form mb-2 text-black" enctype="multipart/form-data">
                             {% csrf_token %}
-                           <!--
-                               <label for="country">Country :</label>
-                            <input type="text"  name="country">
-                            <label for="city_name">City :</label>
-                            <input type="text" name="city_name">
-                           --> 
                             {{ form }}
                             <div class="text-center pt-4 pb-4">
                                 <button class="btn more-button text-uppercase" type="submit">Get weather</button>
@@ -49,7 +43,7 @@
                                         <img src="http://openweathermap.org/img/w/{{sensor_weather.icon }}.png"  class="rounded-circle mr-3" height="100" width="100">
                                     </div>
                                     <div class="view-more-button pb-2">
-                                        <a href="{% url 'result' %}" class="more-button button">VIEW MORE</a>
+                                        <a href="" class="more-button button">VIEW MORE</a>
                                     </div> 
                                 </div>
                             </div>
