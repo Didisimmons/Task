@@ -123,6 +123,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# This informs django were are static files are located
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+
+API_KEY = os.getenv('API_KEY', '')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

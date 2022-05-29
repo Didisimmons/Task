@@ -1,26 +1,64 @@
 {% extends "base.html" %}
 {% load static %}
-    {% block content %}
-    <div>
-      <div class="container h-100">
-        <div class="row justify-content-center">
-          <div class="col-md-6 col-sm-12 col-xs-12 pt-5">
-            <form method="POST"  action=""class="card border-0 p-3 shadow-sm">
+{% block content %}
+    
 
-              <div class="form-group">
-                <input type="text" class="form-control" name="city" placeholder="Indianapolis"> 
-              </div>
-
-              <div class="form-group">
-                <input type="text" class="form-control" name="country" placeholder="US" value="{{num}}"> 
-              </div>
-
-              <div class="form-group">
-                <button class="btn btn-info btn-block">Get Weather</button>
-              </div>
-            </form>
-          </div>
+    <div class="container">
+        <div class="weather-box pt-3">
+            <h3 class="text-center header-content">GET YOUR WEATHER UPDATES</h3>
+            <div class=" mt-3 mb-4">
+                <div class="card-body text-center">
+                    <div class="weather-container pt-3 text-black">
+                        <form method="POST" action="{% url 'home' %}" class="form mb-2 text-black" enctype="multipart/form-data">
+                            {% csrf_token %}
+                           <!--
+                               <label for="country">Country :</label>
+                            <input type="text"  name="country">
+                            <label for="city_name">City :</label>
+                            <input type="text" name="city_name">
+                           --> 
+                            {{ form }}
+                            <div class="text-center pt-4 pb-4">
+                                <button class="btn more-button text-uppercase" type="submit">Get weather</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-{% endblock content %}
+
+    <section>
+        <div class="container">
+            <div class="allthread-box">
+               {% for sensor_weather in weather_data %}
+                <div class="card thread-box mt-3 mb-4">
+                    <div class="card-body text-center">
+                        <div class="row">
+                            <div class="col-sm-6 ">
+                                <div class="threads">
+                                    <h5 class="pt-3"><small class="general-color">Country: </small>{{ sensor_weather.country }} </h5> 
+                                    <h6 class="pt-2"><small class="general-color">City: </small>{{ sensor_weather.city }} </h6>
+                                    <p class="pt-2"><small class="general-color">{{ day }} </small></p>
+                                    <p class="pt-2">{{ sensor_weather.description }}</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="threads">
+                                    <div class="d-sm-block">
+                                        <img src="http://openweathermap.org/img/w/{{sensor_weather.icon }}.png"  class="rounded-circle mr-3" height="100" width="100">
+                                    </div>
+                                    <div class="view-more-button pb-2">
+                                        <a href="{% url 'result' %}" class="more-button button">VIEW MORE</a>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+  
+{% endblock %}
