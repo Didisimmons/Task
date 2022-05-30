@@ -8,3 +8,4 @@ class Sensor(models.Model):
 
     def __str__(self):
         return str(self.sensor_id)
+    
