@@ -52,3 +52,11 @@
   .general-color {
     color: #61150e;
   }
+
+  .weather-forecast{
+    padding-bottom:2rem;
+  }
+
+  .icon{
+    padding:1rem 0;
+  }
