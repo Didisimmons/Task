@@ -1,5 +1,6 @@
 import requests, datetime, math
 from django.shortcuts import render,  get_object_or_404
+from django.conf import settings
 from .forms import SensorForm
 from .models import Sensor
 
@@ -17,11 +18,12 @@ def index(request):
     weather_data = []
 
     for w_data in sensors:
-        url = "http://api.openweathermap.org/data/2.5/weather?q={},{}&units=imperial&appid="
+        url = "http://api.openweathermap.org/data/2.5/weather?q={},{}&units=imperial&appid={}"
+        api_key = settings.API_KEY
         country = w_data.country
         city = w_data.city_name
         id = w_data.sensor_id
-        r = requests.get(url.format(city,country)).json()
+        r = requests.get(url.format(city, country, api_key)).json()
         #request the API data and convert the JSON to Python data types
         sensor_weather = {
             'id': w_data.sensor_id,
@@ -33,8 +35,9 @@ def index(request):
             'description' : r['weather'][0]['description'],
             'icon' : r['weather'][0]['icon'],    
             'wind_speed' : r['wind']['speed'], 
+            'long' : r['coord']['lon'],
+            'lat' : r['coord']['lat'],
         }
-        print(sensor_weather)
         weather_data.append(sensor_weather)
     day = datetime.date.today()
     template = 'weather/index.html'
@@ -50,10 +53,11 @@ def result(request, sensor_id):
     sensors = get_object_or_404(Sensor, pk=sensor_id)
     country = sensors.country
     city = sensors.city_name
+    api_key = settings.API_KEY
 
-    url = "http://api.openweathermap.org/data/2.5/forecast?q={},{}&appid="
+    url = "http://api.openweathermap.org/data/2.5/forecast?q={},{}&appid={}"
    
-    r = requests.get(url.format(city, country)).json()
+    r = requests.get(url.format(city, country, api_key)).json()
     
     #request the API data and convert the JSON to Python data types
     single_weather = {
@@ -85,7 +89,6 @@ def result(request, sensor_id):
         'date4': r['list'][4]["dt_txt"],
         'date5': r['list'][5]["dt_txt"],
         'date6': r['list'][6]["dt_txt"],
-        
         
         "icon": r["list"][0]["weather"][0]["icon"],
         "icon1": r["list"][1]["weather"][0]["icon"],
