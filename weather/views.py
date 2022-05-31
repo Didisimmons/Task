@@ -49,7 +49,6 @@ def result(request, sensor_id):
     sensors = get_object_or_404(Sensor, pk=sensor_id)
     country = sensors.country
     city = sensors.city_name
-    id = sensors.sensor_id,
     api_key = settings.API_KEY
 
     url = "http://api.openweathermap.org/data/2.5/forecast?q={},{}&appid={}"
@@ -58,7 +57,6 @@ def result(request, sensor_id):
 
     # request the API data and convert the JSON to Python data types
     single_weather = {
-        'id': id,
         'city': city,
         'country': country,
         "pressure": r["list"][0]["main"]["pressure"],
