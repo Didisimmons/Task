@@ -1,5 +1,5 @@
 import requests, datetime, math
-from django.shortcuts import render,  get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.conf import settings
 from .forms import SensorForm
 from .models import Sensor
@@ -30,13 +30,8 @@ def index(request):
             'city' : w_data.city_name,
             'country' : w_data.country,
             'temperature' : r["main"]["temp"],
-            'humidity' : r['main']['humidity'],
-            'pressure' : r['main']['pressure'],
             'description' : r['weather'][0]['description'],
             'icon' : r['weather'][0]['icon'],    
-            'wind_speed' : r['wind']['speed'], 
-            'long' : r['coord']['lon'],
-            'lat' : r['coord']['lat'],
         }
         weather_data.append(sensor_weather)
     day = datetime.date.today()
@@ -53,6 +48,7 @@ def result(request, sensor_id):
     sensors = get_object_or_404(Sensor, pk=sensor_id)
     country = sensors.country
     city = sensors.city_name
+    id = sensors.sensor_id,
     api_key = settings.API_KEY
 
     url = "http://api.openweathermap.org/data/2.5/forecast?q={},{}&appid={}"
@@ -61,6 +57,7 @@ def result(request, sensor_id):
     
     #request the API data and convert the JSON to Python data types
     single_weather = {
+        'id' : id,
         'city' : city,
         'country' : country,
         "pressure":r["list"][0]["main"]["pressure"],
@@ -103,6 +100,11 @@ def result(request, sensor_id):
     context = {
         'sensors': sensors,
         'single_weather' :single_weather,
-
     }
     return render(request, template, context)
+
+
+def delete_sensor(request, sensor_id):
+    sensors = get_object_or_404(Sensor, pk=sensor_id)
+    sensors.delete()
+    return redirect(reverse('home'))

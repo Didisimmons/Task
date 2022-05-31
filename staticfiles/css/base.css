@@ -16,47 +16,47 @@
     font-size: 14px;
   }
   
-  .header-content {
-    padding: 4rem 0 2rem 0;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 50px;
-  }
-  
-  .more-button:hover {
-    color: var(--white);
-    padding: 10px;
-  }
-  
-  .view-more-button {
-    margin-top: 0.85rem;
-  }
-  
-  .thread-box {
-    box-shadow: 0 0.1rem 0 0 #41464b1f;
-  }
-  
-  .icons {
-    padding-top: 2rem;
-  }
-  
-  .text-center i {
-    color: #730302;
-  }
-  
-  .text-black {
-    color: black;
-  }
-  
-  .general-color {
-    color: #61150e;
-  }
+.header-content {
+  padding: 4rem 0 2rem 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+}
 
-  .weather-forecast{
-    padding-bottom:2rem;
-  }
+.more-button:hover {
+  color: var(--white);
+  padding: 10px;
+}
 
-  .icon{
-    padding:1rem 0;
-  }
+.view-more-button {
+  margin-top: 0.85rem;
+}
+
+.thread-box {
+  box-shadow: 0 0.1rem 0 0 #41464b1f;
+}
+
+.icons {
+  padding-top: 2rem;
+}
+
+.text-center i {
+  color: #730302;
+}
+
+.text-black {
+  color: black;
+}
+
+.general-color {
+  color: #61150e;
+}
+
+.weather-forecast{
+  padding-bottom:2rem;
+}
+
+.icon{
+  padding:1rem 0;
+}
