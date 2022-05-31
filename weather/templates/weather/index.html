@@ -9,13 +9,16 @@
             <div class=" mt-3 mb-4">
                 <div class="card-body text-center">
                     <div class="weather-container pt-3 text-black">
-                        <form method="POST" action="{% url 'home' %}" class="form mb-2 text-black" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            {{ form }}
-                            <div class="text-center pt-4 pb-4">
-                                <button class="btn more-button text-uppercase" type="submit">Get weather</button>
-                            </div>
-                        </form>
+                        <div class="col-sm-12 col-md-6 mx-auto">
+                            <form method="POST" action="{% url 'home' %}" class="form mb-2 text-black" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form.country}}
+                                {{ form.city_name}}
+                                <div class="text-center pt-4 pb-4">
+                                    <button class="btn more-button text-uppercase" type="submit">Get weather</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 # Weather App Challenge
 
-Build a weather App that allows a user to retrieve sensor weather data for each country and city. If the user would like to view more weather deatils about a particular country they can click the view more button using the [Open Weather API ](https://openweathermap.org/api) 
+A weather app that retrieves sensor weather data for each country and city. If the user wants to see more weather details about a specific country, using the [Open Weather API](https://openweathermap.org/api) they can click the view more button to see the average temperature for the day.
 
 Deployed site can be found [here](https://weathertabs.herokuapp.com/)
 
@@ -72,3 +72,18 @@ Deployed site can be found [here](https://weathertabs.herokuapp.com/)
     * [Media](#media)  
  
 8. [Acknowledgements](#acknowledgements)  
+
+# **UX Development**   
+### **USER STORIES**
+#### **NEW USER OR RETURNING USERS**
+As a new user/ registered shopper, I want to:
+1.	Be able to find weather information easier. 
+2.	Be able to save Country and City data in order to easily access more weather information about a saved city. 
+3.  Be able to delete Country and City data along with its metadata. 
+
+## **DESIGN**   
+### **Color Scheme**  
+The colours used in the design for the  Weather App was blue. The colour was inspired by the sky in order for the user to intuitively understand the purpose of the site. 
+
+### **Typography**  
+The [Google Fonts](https://fonts.google.com) Quicksand has been used to give the site a clean a friendly clean minimalist design.
