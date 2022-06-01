@@ -25,17 +25,15 @@ def index(request):
         city = w_data.city_name
         id = w_data.sensor_id
         r = requests.get(url.format(city, country, api_key)).json()
-        # request the API data and convert the JSON to Python data types
         sensor_weather = {
             'id': w_data.sensor_id,
-            'city': w_data.city_name,
-            'country': w_data.country,
-            'temperature': r["main"]["temp"],
-            'description': r['weather'][0]['description'],
-            'icon': r['weather'][0]['icon'],
+            'city' : w_data.city_name,
+            'country' : w_data.country,
+            'temperature' : r["main"]["temp"],
+            'description' : r['weather'][0]['description'],
+            'icon' : r['weather'][0]['icon'],
         }
         weather_data.append(sensor_weather)
-
     template = 'weather/index.html'
     context = {
         'form': form,

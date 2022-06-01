@@ -134,6 +134,8 @@ Some automated testing was performed, but due to time constraints, manual testin
 
 3. If a user decides to delete a sensor, a confirmation modal appears; if the user clicks the delete button, the user is returned to the homepage. If the user clicks the cancel button, they are returned to the home page, but they would have preferred to be returned to the return page. When I attempted to add the sensor id to be passed through the result function on the cancel button, the error id not valid kept appearing, which could not be fixed due to time constraints but is one of the future improvements.
 
+4. During testing, it was discovered that when an incorrect city name is entered into the database, the API url that is fetching data with the sensor form input is affected. When incorrect data is entered into the database, the website displays a 500 server error, causing the code to break. This has an impact on retrieving data from the API json file, which rejects us accessing the keys in the file. The admin user must currently login to their portal and delete the sensor id as a workaround. Once this is completed, the website will function normally again, and the user will be able to register a new sensor. 
+
 ### **SOLVED BUGS**
 
 1. There were problems retrieving and storing the API data for the weather app in the form , which prevented the user from storing the API weather meta  data when registering a sensor.  I was unable to store the weather meta data in the registered sensor's database due to time constraints when attempting to meet the challenge's second requirement of receiving new metric values as the weather changes for the sensor via an API call, believing it needed to be real-time weather data to be stored. However, after some research, I discovered a workaround by calling the open weather API and gaining access to weather data using the registered sensor's city and country names.
@@ -156,7 +158,7 @@ To keep the challenge within the timeframe, some functionalities that could be i
 
 * Include a button on the single view page that allows the user to view the day's average temperature based on the  API weather time stamps for each sensor registered.
 
-* If the user is logged in they should be able to perform CRUD functions, they can save weather metadata in their database and update the values with real-time weather metadata from the API.
+* Once logged in, the user should be able to perform CRUD functions, such as saving weather metadata in their database and updating the values with real-time weather metadata from the API.
 
 * Add restrictions in the Sensor Form to prevent duplicate forms of the same city and country name from being stored in the database, and to ensure that the city and country provided are actual places rather than just formed locations before registering.
 
