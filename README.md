@@ -35,7 +35,6 @@ Deployed site can be found [here](https://weathertabs.herokuapp.com/)
     * [Project Set Up](#project-set-up)
     * [Deployment To Heroku](#deployment-to-heroku)
 
-6. [Acknowledgements](#acknowledgements)  
 
 # **UX Development**   
 ### **USER STORIES**
@@ -43,7 +42,7 @@ Deployed site can be found [here](https://weathertabs.herokuapp.com/)
 As a new user/ registered shopper, I want to:
 1.	Be able to find weather information easier. 
 2.	Be able to save Country and City data in order to easily access more weather information about a saved city. 
-3.  Be able to delete Country and City data along with its metadata. 
+3. Be able to delete Country and City data along with its metadata. 
 
 ## **DESIGN**   
 ### **Color Scheme**  
@@ -330,6 +329,3 @@ After forking or cloning the Task repository, the following steps must be comple
 
 18. Return to our task-settings.py file and replace the secret key setting with the call to get it from the environment, with an empty string as the default.
 ``` SECRET_KEY = os.environ.get('SECRET_KEY') ```
-
-# **Acknowledgements**   
-   * I'd like to express my gratitude to my hackathon team for their assistance and helpful problem-solving guidelines.
