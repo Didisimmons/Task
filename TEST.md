@@ -37,9 +37,9 @@ The issues mentioned above were resolved, and the codes were revalidated, which 
 #### **PYTHON**
 * [Pep8 Online validator](http://pep8online.com/): This was used to run our Python code to ensure that all errors were removed, such as trailing whitespace. When this was run through the validator, it was discovered that some whitespaces were present, as well as some variables that had been flagged and resolved, but only errors such as
 
-      -  On the views.py file the url = "http://api.openweathermap.org/data/2.5/weather?q={},{}&units=imperial&appid={}"  line is too long, but breaking it down may affect fetching API data, so erro ignored. 
+   -  On the views.py file the url = "http://api.openweathermap.org/data/2.5/weather?q={},{}&units=imperial&appid={}"  line is too long, but breaking it down may affect fetching API data, so erro ignored. 
 
-      - Also on the views.py file "multiple imports on one line" was ignored because it is equivalent to writing in the same line.. 
+   - Also on the views.py file "multiple imports on one line" was ignored because it is equivalent to writing in the same line.. 
 
  With the exception of the errors mentioned above, which were ignored, whitespaces were removed from all codes, resulting in an error-free code.
 
