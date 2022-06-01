@@ -31,8 +31,9 @@
 
 - On the home page the errors are 
       - misuse of aria-label
-      - Img element no alt attribute
+      - Img element has no alt attribute
       - 
+
 
 
 #### **CSS**

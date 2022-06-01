@@ -8,10 +8,6 @@ class Sensor(models.Model):
     city_name = models.CharField(max_length=32, null=False)
     country = models.CharField(max_length=32, null=False)
 
-    def __init__(self, sensor_id, country, city_name):
-        self.sensor_id = sensor_id
-        self.country = country
-        self.city_name = city_name
-
+    
     def __str__(self):
         return str(self.sensor_id)

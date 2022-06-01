@@ -3,9 +3,8 @@ from .models import Sensor
 
 
 class SensorForm(forms.ModelForm):
-
     class Meta:
-        model = Sensor('country', 'city_name', 'sensor_id')
+        model = Sensor
         fields = ['country', 'city_name']
 
     def __init__(self, *args, **kwargs):
@@ -18,6 +17,3 @@ class SensorForm(forms.ModelForm):
         self.fields['country'].widget.attrs['autofocus'] = True
         for field in self.fields:
             self.fields[field].widget.attrs['placeholder'] = placeholders[field]
-
-    def __str__(self):
-        return str(self.sensor_id)
