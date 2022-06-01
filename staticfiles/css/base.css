@@ -60,3 +60,16 @@
 .icon{
   padding:1rem 0;
 }
+
+.admin-btn a{
+  cursor: pointer;
+  text-decoration: none;  
+}
+
+.admin-btn a:hover{
+    color: #343a40;
+}
+
+.delete-container{
+  text-align: center;
+}
