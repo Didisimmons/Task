@@ -296,7 +296,7 @@ After forking or cloning the Task repository, the following steps must be comple
    ```
 13. Also in the settings.py file add 
 
-``` STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' ```
+``` STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage' ```
 
 14. After we have completed the preceding steps, we must add the hostname of our Heroku app (Weathertabs) to the list of allowed hosts in our settings.py and also include localhost so that Gitpod can continue to function:
    ```

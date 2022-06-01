@@ -99,7 +99,7 @@ Some automated testing was performed, but due to time constraints, manual testin
 #### **RESULT PAGE**
    1. Verify that the sensor information for a specific sensor id is displayed on the result page. The page should display the weather temperature for the sensor's six time readings of the day.
 
-      When viewed on all devices, the page renders as expected, displaying the weather temperature for the six time readings of the day present on the API jon data . The text responds to screen size and adjusts accordingly.
+      When viewed on all devices, the page renders as expected, displaying the weather temperature for the six time readings of the day present on the API json data . The text responds to screen size and adjusts accordingly.
 
       The card container has also been used to display the day's six time readings beneath the country/city weather metadata, which is responsive on all screen devices.
 
