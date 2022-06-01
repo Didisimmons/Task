@@ -1,6 +1,6 @@
-# Weather App Challenge
+# Weather Tabs 
 
-A weather app that retrieves sensor weather data for each country and city. If the user wants to see more weather details about a specific country, using the [Open Weather API](https://openweathermap.org/api) they can click the view more button to see the average temperature for the day.
+A weather app that retrieves sensor weather data for each country and city. If the user wants to see more weather details about a specific country, using the [Open Weather API](https://openweathermap.org/api) they can click the view more button to see the various temperature for the day of that sensor.
 
 Deployed site can be found [here](https://weathertabs.herokuapp.com/)
 
@@ -72,24 +72,24 @@ The site has been kept clean in order for users to easily navigate and interact 
 
 #### **2. Single View Page**
 
-The page displays more detailed weather metdata for each sensor.
-- It contains the following elements: the sensor image for the country, the weather temperature for the same day with minimum and maximum temperatures. In addition, wind, humidity, and temperature data are provided.
+The page displays more detailed weather metadata for each sensor.
+- It contains the following elements: the sensor icon for the country, the weather temperature for the same day with minimum and maximum temperatures. In addition, wind, humidity, and temperature data are provided.
 
 
 ### **FEATURES TO IMPLEMENT IN FUTURE**  
 
-* **Toast Messages** : Currently, the user is not informed when they perform an action but for a better user experiience it would be nice to add toast messages to alert users about their action on the site.
+*  **Toast Messages**: Currently, the user is not notified when they perform an action, but it would be nice to add toast messages to alert users about their action on the site for a better user experience.
 
-*  **User accounts** : Currently anyone who can access the site has the ability to perform some basic CRUD functions such as adding a sensor and deleting the sensor. It would be nice if each user could create their accounts and register the sensor of their choice. The user has only edit and delte their sensors added and be able to retrieve live data for each sensor. There should also be some defensive programming that gives the admin user access to features that the registered user cannot access. 
+*  **User accounts**: Currently, anyone who can access the site can perform some basic CRUD functions such as adding and deleting sensors. It would be ideal if each user could create their own account and register their preferred sensor. The user only needs to edit and delete their sensors to be able to retrieve live data for each sensor. There should also be some defensive programming that allows the admin user to access features that the registered user does not have access to.
 
 
 ### **STRUCTURE**  
 
-Some pieces of the code were resused in order to fetch data from API. 
+Some pieces of the code were resused in order to fetch data from Weather API. 
 
-- App : This is a single app that allows the user to register a sensor with information like "country name" and "city name." When this information is entered, the form is sent to the database, which stores the new sensor. The newly saved sensor data is used to invoke the open weather API, which retrieves the most recent weather metadata for that sensor and attaches it to the sensor data displayed on the homepage.
+- App : This is an app that allows the user to register a sensor with information like "country name" and "city name." When this information is entered, the form is sent to the database, which stores the new sensor. The newly saved sensor data is used to invoke the open weather API, which retrieves the most recent weather metadata for that sensor and attaches it to the sensor displayed on the homepage.
 
-If the user wants to see more metadata about a sensor, they can do so by clicking the view more button. This selects the sensor's id, retrieves the weather meta data, and also calls the open weather API to retrieve live updates of the metadata for that id data and displays it for the user.
+If the user wants to see more metadata about a sensor, they can do so by clicking the view more button. This selects the sensor's id and also calls the open weather API to retrieve weather updates of the metadata for that sensor id  and display data for the user.
 
 The user can also delete sensor data by clicking the delete link, which launches a modal on the single view page. The user is asked to confirm their decision; if they do, the sensor id and its data are deleted, and the user is returned to the home page.
 
@@ -104,7 +104,7 @@ The user can also delete sensor data by clicking the delete link, which launches
 ### **FRAMEWORKS & LIBRARIES**   
    * [Django Template](https://jinja.palletsprojects.com) : Django used this as a templating language to display backend data on the frontend.
 
-   * [BOOTSTRAP 4.0](https://getbootstrap.com/docs/5.0/):  This was used to help with the website's structure, style, and responsiveness across all devices.
+   * [BOOTSTRAP 5.0](https://getbootstrap.com/docs/5.0/):  This was used to help with the website's structure, style, and responsiveness across all devices.
 
    * [Fontawesome](https://fontawesome.com/) : This was used to convey information using icons and to improve the site's appearance.
 
@@ -189,7 +189,7 @@ os.environ.setdefault('SECRET_KEY', '<YOUR_KEY>')
 8. Ensure that the env.py file is located in the .gitignore file.
 
 9. Type the following into the terminal to install our required dependencies and modules.
-```pip3 install -r requirements.txt```
+      ```pip3 install -r requirements.txt```
 
 
 #### **Project Set Up** 
@@ -231,7 +231,7 @@ After forking or cloning the Task repository, the following steps must be comple
    pip3 install dj_database_url
    pip3 install psycopg2-binary
    ```
-   - Once the requirements have been created, we must freeze them in our CLI pip3 freeze > requirements.txt to ensure that Heroku instals our app when it is deployed.
+   - Once the requirements have been created, we must freeze them in our CLI ``` pip3 freeze > requirements.txt ```to ensure that Heroku instals our app when it is deployed.
 
    - Create a new database for WeatherApp by importing dj database url into our settings.py file and commenting out our default configuration. We would need to replace the default database with a call to dj database url.parse and pass it the database URL from Heroku (which can be found in our app settings tab's config variables).
       ```
@@ -289,10 +289,11 @@ After forking or cloning the Task repository, the following steps must be comple
 
 12.  In the settings.py file middleware section (at the top) add 
 
-```
-    MIDDLEWARE_CLASSES = (
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-```
+   ```
+      MIDDLEWARE_CLASSES = (
+      'whitenoise.middleware.WhiteNoiseMiddleware',
+      )
+   ```
 13. Also in the settings.py file add 
 
 ``` STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' ```
@@ -304,7 +305,7 @@ After forking or cloning the Task repository, the following steps must be comple
 
 15. Save all files, commit, and push to github, then Heroku. We would need to initialise git remote because we created our app via the heroku  website rather than the terminal.
    ```
-   heroku git:remote -a weathertabs 
+   heroku git:remote -a appname 
    ```
    and then push to Heroku using 
    ```
