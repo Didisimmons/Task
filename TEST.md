@@ -27,14 +27,9 @@
 
 ### **VALIDATOR TESTING**
 #### **HTML**
-*  [W3C Markup Validation](https://validator.w3.org/): This is also used to validate our newly created webpages. However some errors were found such as  
+*  [W3C Markup Validation](https://validator.w3.org/): This is also used to validate new webpages. However, some errors were discovered, such as On the home page, the errors were aria-label misuse and an img element with no alt attribute, which was also present on the results page.
 
-- On the home page the errors are 
-      - misuse of aria-label
-      - Img element has no alt attribute
-      - 
-
-
+The issues mentioned above were resolved, and the codes were revalidated, which revealed that our code was error-free.
 
 #### **CSS**
 * [W3C CSS validation](https://jigsaw.w3.org/css-validator/): This is used to validate the CSS code that is used on all webpages . The validator passes our code as error-free. 
@@ -130,9 +125,12 @@ Some automated testing was performed, but due to time constraints, manual testin
 <br/>
 
 ### **FURTHER TESTING** 
-When running the tests for the form in the weather app, an error was discovered that prevented the test from running. The error "missing 1 required argument:'self'" occurred because I forgot to provide a required argument when instantiating the Sensor class that was added to the sensor model. 
+
+1. When running the tests for the form in the weather app, an error was discovered that prevented the test from running. The error "missing 1 required argument:'self'" occurred because I forgot to provide a required argument when instantiating the Sensor class that was added to the sensor model. 
 
 After that, another error message appeared: "__init__() missing 1 required positional argument: 'city name" The arguments for the initiated class were present in all three of the sensor data, but when attempting to set the values to default, another error "test city name is required() missing 1 required positional argument:'self'" appears. After some research, and due to time constraints, testing for the views.py and models.py files was omitted because it would have necessitated more debugging.
+
+2. After running the test file, it was discovered that the sensor was no longer being called on the live Heroku site, and an error message was displayed. Some of the changes made during automated unit testing were reversed in order to get our deployed site up and running.
 
 
 ### **SOLVED BUGS**
@@ -165,3 +163,4 @@ To keep the challenge within the timeframe, some functionalities that could be i
 * If the user is logged in and can perform CRUD functions, they can save weather metadata in their database and update the values with real-time weather metadata from the API.
 
 * Add restrictions in the Sensor Form to prevent duplicate forms of the same city and country name from being stored in the database, and to ensure that the city and country provided are actual places rather than just formed locations before registering.
+
