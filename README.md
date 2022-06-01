@@ -39,7 +39,7 @@ Deployed site can be found [here](https://weathertabs.herokuapp.com/)
 # **UX Development**   
 ### **USER STORIES**
 #### **NEW USER OR RETURNING USERS**
-As a new user/ registered shopper, I want to:
+As a new user/ registered user, I want to:
 1.	Be able to find weather information easier. 
 2.	Be able to save Country and City data in order to easily access more weather information about a saved city. 
 3. Be able to delete Country and City data along with its metadata. 
@@ -49,7 +49,7 @@ As a new user/ registered shopper, I want to:
 The colours used in the design for the  Weather App was blue. The colour was inspired by the sky in order for the user to intuitively understand the purpose of the site. 
 
 ### **Typography**  
-The [Google Fonts](https://fonts.google.com) Quicksand has been used to give the site a clean a friendly clean minimalist design.
+The [Google Fonts](https://fonts.google.com) Quicksand has been used to give the site a clean a friendly minimalist design.
 
 # **Features**  
 ## **Existing Features** 
@@ -67,7 +67,7 @@ The [Google Fonts](https://fonts.google.com) Quicksand has been used to give the
 
 When visiting the weather app page, the user can enter both the country name and the city name to find their sensor metdata. When a user adds a sensor, the homepage displays all of the sensors.
 
-The site has been kept clean in order for users to easily navigate and interact with it. To draw the user's attention, the header phrase, which welcomes the user to the site, is placed in the center of the site.
+The site has been kept clean in order for users to easily navigate and interact with it. To draw the user's attention, the header phrase, which welcomes the user to the site, is placed at the center of the site.
    <br/>
 
 #### **2. Single View Page**

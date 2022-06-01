@@ -86,8 +86,10 @@
             </div>
         </div>
         <div class="delete-container">
-            <a class="text-danger admin-btn pb-2" data-toggle="modal" data-target="#modaldelete{{ sensors.sensor_id }}">Delete</a>
-
+            <div class="admin-btn">
+                <a class="text-danger  pb-2" data-toggle="modal" data-target="#modaldelete{{ sensors.sensor_id }}">Delete</a>
+            </div>
+            
             <div class="modal fade" id="modaldelete{{ sensors.sensor_id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ sensors.sensor_id }}" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">

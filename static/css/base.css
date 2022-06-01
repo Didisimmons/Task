@@ -61,12 +61,12 @@
   padding:1rem 0;
 }
 
-a.admin-btn{
+.admin-btn a{
   cursor: pointer;
   text-decoration: none;  
 }
 
-a.admin-btn:hover{
+.admin-btn a:hover{
     color: #343a40;
 }
 
