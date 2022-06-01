@@ -1,4 +1,4 @@
-import requests, datetime, math
+import requests, math
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.conf import settings
 from .forms import SensorForm
@@ -35,12 +35,11 @@ def index(request):
             'icon': r['weather'][0]['icon'],
         }
         weather_data.append(sensor_weather)
-    day = datetime.date.today()
+
     template = 'weather/index.html'
     context = {
         'form': form,
         'weather_data': weather_data,
-        'day': day
     }
     return render(request, template, context)
 
